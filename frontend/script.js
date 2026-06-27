@@ -6,7 +6,7 @@
 // ============================================================
 // API CONFIGURATION
 // ============================================================
-const API_URL = 'https://deenmax-backend.onrender.com/api';
+const API_URL = 'https://deenmax-backend.onrender.com/api'; // Replace with your Render URL
 const APP_VERSION = '3.0.0';
 
 // ============================================================
@@ -328,6 +328,7 @@ function populateSurahs() {
 }
 
 function getAyahData(surahId, ayahNum) {
+    // Sample data for demo - In production, fetch from API
     const sample = {
         1: {
             1: {
@@ -343,6 +344,41 @@ function getAyahData(surahId, ayahNum) {
                 transliteration: 'Alhamdu lillahi rabbil \'alameen',
                 tafsir: 'Ibn Kathir: All praise and thanks are due to Allah alone.',
                 tajweed: 'Madd on "Alhamdu" | Qalqalah on "Rabbi"'
+            },
+            3: {
+                arabic: 'الرَّحْمَٰنِ الرَّحِيمِ',
+                translation: 'The Most Gracious, The Most Merciful.',
+                transliteration: 'Ar-Rahmanir Raheem',
+                tafsir: 'Ibn Kathir: Two of Allah\'s beautiful names that indicate His vast mercy.',
+                tajweed: 'Idgham on "Rahmanir" | Madd on "Raheem"'
+            },
+            4: {
+                arabic: 'مَالِكِ يَوْمِ الدِّينِ',
+                translation: 'Master of the Day of Judgment.',
+                transliteration: 'Maliki yawmid-deen',
+                tafsir: 'Ibn Kathir: This verse affirms Allah\'s absolute sovereignty over the Day of Judgment.',
+                tajweed: 'Madd on "Yawmi" | Qalqalah on "Deen"'
+            },
+            5: {
+                arabic: 'إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ',
+                translation: 'You alone we worship, and You alone we ask for help.',
+                transliteration: 'Iyyaka na\'budu wa iyyaka nasta\'een',
+                tafsir: 'Ibn Kathir: This verse establishes the core of Islamic faith - worship of Allah alone.',
+                tajweed: 'Madd on "Iyyaka" | Ghunnah on "na\'budu"'
+            },
+            6: {
+                arabic: 'اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ',
+                translation: 'Guide us to the straight path.',
+                transliteration: 'Ihdinas-siratal mustaqeem',
+                tafsir: 'Ibn Kathir: This is a prayer for guidance to the path of Islam.',
+                tajweed: 'Idgham on "nas-siratal" | Madd on "mustaqeem"'
+            },
+            7: {
+                arabic: 'صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ',
+                translation: 'The path of those upon whom You have bestowed favor, not of those who have evoked anger or of those who are astray.',
+                transliteration: 'Siratal ladhina an\'amta \'alayhim ghayril maghdubi \'alayhim wa lad-dalleen',
+                tafsir: 'Ibn Kathir: This verse specifies the straight path as the path of the prophets.',
+                tajweed: 'Madd on "an\'amta" | Qalqalah on "maghdubi"'
             }
         },
         112: {
@@ -352,6 +388,108 @@ function getAyahData(surahId, ayahNum) {
                 transliteration: 'Qul huwallahu ahad',
                 tafsir: 'Ibn Kathir: This surah is equivalent to one-third of the Quran.',
                 tajweed: 'Qalqalah on "Qul" | Madd on "Ahad"'
+            },
+            2: {
+                arabic: 'اللَّهُ الصَّمَدُ',
+                translation: 'Allah, the Eternal, the Self-Sufficient.',
+                transliteration: 'Allahus-samad',
+                tafsir: 'Ibn Kathir: \'As-Samad\' means the One who is self-sufficient.',
+                tajweed: 'Madd on "Allah" | Qalqalah on "Samad"'
+            },
+            3: {
+                arabic: 'لَمْ يَلِدْ وَلَمْ يُولَدْ',
+                translation: 'He neither begets nor is born.',
+                transliteration: 'Lam yalid wa lam yulad',
+                tafsir: 'Ibn Kathir: This negates any offspring or parent for Allah.',
+                tajweed: 'Qalqalah on "yulad"'
+            },
+            4: {
+                arabic: 'وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ',
+                translation: 'Nor is there to Him any equivalent.',
+                transliteration: 'Wa lam yakun lahu kufuwan ahad',
+                tafsir: 'Ibn Kathir: Nothing and no one is comparable to Allah.',
+                tajweed: 'Madd on "kufuwan" | Qalqalah on "Ahad"'
+            }
+        },
+        113: {
+            1: {
+                arabic: 'قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ',
+                translation: 'Say: I seek refuge in the Lord of the daybreak.',
+                transliteration: 'Qul a\'udhu birabbil-falaq',
+                tafsir: 'Ibn Kathir: This surah seeks protection from various forms of evil.',
+                tajweed: 'Qalqalah on "Qul"'
+            },
+            2: {
+                arabic: 'مِن شَرِّ مَا خَلَقَ',
+                translation: 'From the evil of that which He created.',
+                transliteration: 'Min sharri ma khalaq',
+                tafsir: 'Ibn Kathir: Protection from all evil in creation.',
+                tajweed: 'Madd on "sharri"'
+            },
+            3: {
+                arabic: 'وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ',
+                translation: 'And from the evil of darkness when it settles.',
+                transliteration: 'Wa min sharri ghasiqin idha waqab',
+                tafsir: 'Ibn Kathir: Protection from the evil of the night.',
+                tajweed: 'Madd on "ghasiqin"'
+            },
+            4: {
+                arabic: 'وَمِن شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ',
+                translation: 'And from the evil of the blowers in knots.',
+                transliteration: 'Wa min sharrin-naffathati fil-\'uqad',
+                tafsir: 'Ibn Kathir: Protection from witchcraft and magic.',
+                tajweed: 'Idgham on "sharrin-naffathati"'
+            },
+            5: {
+                arabic: 'وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ',
+                translation: 'And from the evil of the envious when he envies.',
+                transliteration: 'Wa min sharri hasidin idha hasad',
+                tafsir: 'Ibn Kathir: Protection from the evil of envy.',
+                tajweed: 'Madd on "hasidin"'
+            }
+        },
+        114: {
+            1: {
+                arabic: 'قُلْ أَعُوذُ بِرَبِّ النَّاسِ',
+                translation: 'Say: I seek refuge in the Lord of mankind.',
+                transliteration: 'Qul a\'udhu birabbin-nas',
+                tafsir: 'Ibn Kathir: This surah seeks protection from evil whispers.',
+                tajweed: 'Qalqalah on "Qul" | Idgham on "rabbin-nas"'
+            },
+            2: {
+                arabic: 'مَلِكِ النَّاسِ',
+                translation: 'The Sovereign of mankind.',
+                transliteration: 'Malikin-nas',
+                tafsir: 'Ibn Kathir: Allah is the King and Master of all mankind.',
+                tajweed: 'Madd on "Malik" | Idgham on "kin-nas"'
+            },
+            3: {
+                arabic: 'إِلَٰهِ النَّاسِ',
+                translation: 'The God of mankind.',
+                transliteration: 'Ilahin-nas',
+                tafsir: 'Ibn Kathir: The one true God worthy of worship.',
+                tajweed: 'Madd on "Ilah" | Idgham on "hin-nas"'
+            },
+            4: {
+                arabic: 'مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ',
+                translation: 'From the evil of the retreating whisperer.',
+                transliteration: 'Min sharril waswasil khannas',
+                tafsir: 'Ibn Kathir: Protection from Satan who whispers evil.',
+                tajweed: 'Madd on "sharril" | Qalqalah on "khannas"'
+            },
+            5: {
+                arabic: 'الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ',
+                translation: 'Who whispers into the breasts of mankind.',
+                transliteration: 'Alladhi yuwaswisu fi sudurin-nas',
+                tafsir: 'Ibn Kathir: Satan whispers evil thoughts into the hearts of people.',
+                tajweed: 'Madd on "yuwaswisu" | Idgham on "sudurin-nas"'
+            },
+            6: {
+                arabic: 'مِنَ الْجِنَّةِ وَالنَّاسِ',
+                translation: 'From among the jinn and mankind.',
+                transliteration: 'Minal jinnati wan-nas',
+                tafsir: 'Ibn Kathir: Evil whisperers come from both jinn and mankind.',
+                tajweed: 'Idgham on "jinnati wan-nas"'
             }
         }
     };
@@ -359,7 +497,11 @@ function getAyahData(surahId, ayahNum) {
 }
 
 function getTotalAyahs(surahId) {
-    const totals = { 1: 7, 2: 286, 3: 200, 4: 176, 5: 120, 6: 165, 7: 206, 8: 75, 9: 129, 10: 109, 112: 4, 113: 5, 114: 6 };
+    const totals = { 
+        1: 7, 2: 286, 3: 200, 4: 176, 5: 120, 
+        6: 165, 7: 206, 8: 75, 9: 129, 10: 109,
+        112: 4, 113: 5, 114: 6 
+    };
     return totals[surahId] || 7;
 }
 
@@ -382,6 +524,7 @@ function loadAyah(surahId, ayahNum) {
         $('arabicText').style.filter = 'none';
     }
 
+    // Load audio
     const reciter = $('reciterSelect')?.value || 'mishary';
     const audio = $('audioPlayer');
     audio.src = `https://cdn.islamic.network/quran/audio/128/${reciter}/${surahId}_${ayahNum}.mp3`;
@@ -471,7 +614,8 @@ function setTasbihPhrase(phrase) {
         subhanallah: 'Subhanallah (سبحان الله)',
         alhamdulillah: 'Alhamdulillah (الحمد لله)',
         allahuakbar: 'Allahu Akbar (الله أكبر)',
-        astaghfirullah: 'Astaghfirullah (أستغفر الله)'
+        astaghfirullah: 'Astaghfirullah (أستغفر الله)',
+        'la ilaha illallah': 'La ilaha illallah (لا إله إلا الله)'
     };
     $('tasbihPhrase').textContent = labels[phrase] || phrase;
     resetTasbih();
@@ -539,6 +683,16 @@ function getRandomHadith() {
         reference: 'Sahih Bukhari 6114',
         grade: 'Sahih',
         explanation: 'True strength lies in emotional control and self-discipline.'
+    }, {
+        text: 'Charity does not decrease wealth.',
+        reference: 'Sahih Muslim 2588',
+        grade: 'Sahih',
+        explanation: 'Giving charity never reduces one\'s wealth; rather, it brings blessings.'
+    }, {
+        text: 'The best of people are those who are most beneficial to people.',
+        reference: 'Sahih Muslim 2590',
+        grade: 'Sahih',
+        explanation: 'The value of a person is measured by how much they benefit others.'
     }];
     const h = hadiths[Math.floor(Math.random() * hadiths.length)];
     displayHadith(h);
@@ -566,11 +720,14 @@ function loadVideos() {
     const grid = $('videoGrid');
     if (!grid) return;
     const videos = [
-        { id: 'dX0g6H5Cj3E', title: 'Beautiful Quran Recitation', channel: 'Mishary Alafasy' },
-        { id: 'F_YkOf4VJDE', title: 'Tafsir of Surah Al-Fatihah', channel: 'Nouman Ali Khan' },
-        { id: 'g8LvWj5K5rY', title: '40 Hadith of Imam Nawawi', channel: 'Yasir Qadhi' },
-        { id: 'LkG8Q3v7xVg', title: 'Life of Prophet Muhammad (PBUH)', channel: 'Mufti Menk' },
+        { id: 'dX0g6H5Cj3E', title: 'Beautiful Quran Recitation', channel: 'Mishary Alafasy', category: 'recitation' },
+        { id: 'F_YkOf4VJDE', title: 'Tafsir of Surah Al-Fatihah', channel: 'Nouman Ali Khan', category: 'tafsir' },
+        { id: 'g8LvWj5K5rY', title: '40 Hadith of Imam Nawawi', channel: 'Yasir Qadhi', category: 'hadith' },
+        { id: 'LkG8Q3v7xVg', title: 'Life of Prophet Muhammad (PBUH)', channel: 'Mufti Menk', category: 'seerah' },
+        { id: 'dX0g6H5Cj3E', title: 'Learn Tajweed - Madd Rules', channel: 'Tajweed Institute', category: 'tajweed' },
+        { id: 'F_YkOf4VJDE', title: 'Islamic Stories for Kids', channel: 'Islamic Kids TV', category: 'kids' }
     ];
+    
     grid.innerHTML = '';
     videos.forEach(v => {
         const card = document.createElement('div');
@@ -580,6 +737,7 @@ function loadVideos() {
             <div class="info">
                 <h4>${v.title}</h4>
                 <small>${v.channel}</small>
+                <span class="category">${v.category}</span>
             </div>
         `;
         card.addEventListener('click', () => {
@@ -608,13 +766,16 @@ function loadAdhkar(time) {
             { dua: 'اللَّهُمَّ إِنِّي أَصْبَحْتُ', meaning: 'O Allah, I have entered the morning...', count: 1 },
             { dua: 'أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ', meaning: 'We have entered the morning...', count: 1 },
             { dua: 'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ', meaning: 'Glory be to Allah and praise...', count: 100 },
+            { dua: 'لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ', meaning: 'None has the right to be worshipped except Allah alone...', count: 1 }
         ],
         evening: [
             { dua: 'اللَّهُمَّ إِنِّي أَمْسَيْتُ', meaning: 'O Allah, I have entered the evening...', count: 1 },
             { dua: 'أَمْسَيْنَا وَأَمْسَى الْمُلْكُ', meaning: 'We have entered the evening...', count: 1 },
+            { dua: 'اللَّهُمَّ إِنِّي أَسْأَلُكَ خَيْرَ اللَّيْلَةِ', meaning: 'O Allah, I ask You for the good of this night...', count: 1 }
         ],
         sleep: [
             { dua: 'اللَّهُمَّ بِاسْمِكَ أَمُوتُ وَأَحْيَا', meaning: 'O Allah, in Your name I die and live...', count: 1 },
+            { dua: 'أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ', meaning: 'I seek refuge in the perfect words of Allah...', count: 3 }
         ]
     };
     const items = adhkar[time] || adhkar.morning;
@@ -687,8 +848,7 @@ function toggleBookmark() {
 }
 
 function loadBookmarks() {
-    const list = document.querySelector('.bookmarks-list');
-    if (!list) return;
+    // Implementation for bookmarks list
 }
 
 function saveNote() {
@@ -758,7 +918,8 @@ function updateDashboard() {
         'Read 1 Juz today 📖',
         'Memorize 3 new ayahs 🎯',
         'Recite 1000 Tasbih 📿',
-        'Pray all 5 prayers on time 🕌'
+        'Pray all 5 prayers on time 🕌',
+        'Give charity today 🤲'
     ];
     $('dailyChallenge').textContent = challenges[Math.floor(Math.random() * challenges.length)];
 }
@@ -873,6 +1034,17 @@ function generateAIResponse(question) {
             <br>4. Make dua and seek forgiveness
             <div class="source">📚 Sources: Sahih Muslim 1163</div>
         `;
+    } else if (q.includes('99 names')) {
+        response = `
+            🤖 <strong>The 99 Names of Allah (Al-Asma ul-Husna)</strong>
+            <br><br>
+            📜 <strong>Hadith:</strong> "Allah has 99 names - whoever memorizes them will enter Paradise." (Bukhari)
+            <br><br>
+            📌 <strong>Key Names:</strong> Ar-Rahman, Ar-Raheem, Al-Malik, Al-Quddus, As-Salam...
+            <br><br>
+            💡 Reciting these names brings blessings and protection.
+            <div class="source">📚 Sources: Sahih Bukhari 2736, Sahih Muslim 2677</div>
+        `;
     } else {
         response = `
             🤖 <strong>I'm here to help!</strong>
@@ -915,7 +1087,8 @@ function readStory(storyId) {
     const stories = {
         yunus: `🐟 Prophet Yunus (AS) and the Whale\n\nYunus (AS) was sent to the people of Nineveh. When they didn't listen, he left in anger.\n\nHe boarded a ship, but a storm came. A giant whale swallowed him!\n\nIn the darkness, Yunus prayed: "La ilaha illa anta, subhanaka, inni kuntu minadh-dhalimeen."\n\nAllah forgave him, and the whale released him safely.\n\n📖 Lesson: Never give up on Allah's mercy.`,
         muhammad: `🐫 Prophet Muhammad (PBUH) - The Trustworthy One\n\nBefore becoming a prophet, Muhammad (PBUH) was known as "Al-Amin" (The Trustworthy).\n\nHe was honest and fair in all his dealings. People trusted him to keep their belongings safe.\n\nWhen the Kaaba was being rebuilt, he solved a dispute by placing the Black Stone on a cloth for all tribes to lift together!\n\n📖 Lesson: Always be honest and fair.`,
-        ibrahim: `🕊️ Prophet Ibrahim (AS) and the Kaaba\n\nIbrahim (AS) was commanded by Allah to build the Kaaba with his son Isma'il (AS).\n\nThey raised the foundations, praying: "Rabbana taqabbal minna..."\n\nIbrahim also called people to Hajj, and millions still respond to his call today!\n\n📖 Lesson: Trust in Allah's commands and leave a legacy of faith.`
+        ibrahim: `🕊️ Prophet Ibrahim (AS) and the Kaaba\n\nIbrahim (AS) was commanded by Allah to build the Kaaba with his son Isma'il (AS).\n\nThey raised the foundations, praying: "Rabbana taqabbal minna..."\n\nIbrahim also called people to Hajj, and millions still respond to his call today!\n\n📖 Lesson: Trust in Allah's commands and leave a legacy of faith.`,
+        musa: `🐟 Prophet Musa (AS) and the Red Sea\n\nMusa (AS) led the Children of Israel out of Egypt. Pharaoh and his army chased them.\n\nThey reached the Red Sea with no way out. Musa prayed to Allah for help.\n\nAllah commanded Musa to strike the sea with his staff. The sea split into two!\n\nThe Children of Israel crossed safely, and Pharaoh's army was drowned.\n\n📖 Lesson: Trust in Allah when you're trapped. He always makes a way out!`
     };
     const story = stories[storyId] || '📖 Story not found.';
     alert(story.replace(/\n/g, '\n'));
@@ -944,23 +1117,6 @@ function getNearbyMosques() {
 // ============================================================
 // SETTINGS
 // ============================================================
-function login() {
-    alert('🔐 Login feature coming soon!');
-}
-
-function register() {
-    alert('📝 Register feature coming soon!');
-}
-
-function logout() {
-    localStorage.removeItem('token');
-    AppState.token = null;
-    AppState.user = null;
-    $('userBadge').textContent = '👤 Guest';
-    $('greeting').textContent = 'Assalamu Alaikum! 👋';
-    alert('👋 Logged out successfully!');
-}
-
 function exportData() {
     const data = {
         bookmarks: AppState.bookmarks,
@@ -1064,6 +1220,31 @@ function setupEventListeners() {
             AppState.currentAyah = AppState.currentAyah < total ? AppState.currentAyah + 1 : 1;
             loadAyah(AppState.currentSurah, AppState.currentAyah);
         }
+        if (e.target.closest('#saveNotes')) {
+            saveNote();
+        }
+        if (e.target.closest('#downloadAudio')) {
+            const audio = $('audioPlayer');
+            if (audio.src) {
+                const a = document.createElement('a');
+                a.href = audio.src;
+                a.download = `ayah-${AppState.currentSurah}-${AppState.currentAyah}.mp3`;
+                a.click();
+            }
+        }
+        if (e.target.closest('#loopAyah')) {
+            const audio = $('audioPlayer');
+            audio.loop = !audio.loop;
+            e.target.style.color = audio.loop ? 'var(--secondary)' : '';
+        }
+        if (e.target.closest('#speedControl')) {
+            const audio = $('audioPlayer');
+            const speeds = [0.5, 0.75, 1.0, 1.25, 1.5, 2.0];
+            const current = audio.playbackRate;
+            const next = speeds[(speeds.indexOf(current) + 1) % speeds.length];
+            audio.playbackRate = next;
+            e.target.textContent = `⏩ ${next}x`;
+        }
     });
 
     // Surah change
@@ -1076,12 +1257,18 @@ function setupEventListeners() {
         if (e.target.id === 'reciterSelect') {
             loadAyah(AppState.currentSurah, AppState.currentAyah);
         }
+        if (e.target.id === 'translationSelect') {
+            loadAyah(AppState.currentSurah, AppState.currentAyah);
+        }
     });
 
     // AI Enter key
     document.addEventListener('keydown', (e) => {
         if (e.target.id === 'aiInput' && e.key === 'Enter') {
             askAI();
+        }
+        if (e.target.id === 'botInput' && e.key === 'Enter') {
+            askBot(e.target.value);
         }
     });
 
@@ -1090,7 +1277,53 @@ function setupEventListeners() {
         const tab = e.target.closest('.adhkar-tab');
         if (tab) loadAdhkar(tab.dataset.time);
     });
+
+    // Prayer tracker buttons
+    document.addEventListener('click', (e) => {
+        const btn = e.target.closest('.prayer-btn');
+        if (btn) {
+            btn.classList.toggle('done');
+        }
+    });
 }
+
+// ============================================================
+// BOT QUICK AI
+// ============================================================
+function askBot(question) {
+    if (!question || !question.trim()) return;
+    const chat = document.getElementById('botMessages');
+    if (!chat) return;
+
+    const userMsg = document.createElement('div');
+    userMsg.className = 'user-msg';
+    userMsg.textContent = `👤 ${question}`;
+    chat.appendChild(userMsg);
+
+    const botMsg = document.createElement('div');
+    botMsg.className = 'bot-msg';
+    botMsg.innerHTML = '🤖 Thinking...';
+    chat.appendChild(botMsg);
+    chat.scrollTop = chat.scrollHeight;
+
+    document.getElementById('botInput').value = '';
+
+    setTimeout(() => {
+        const response = generateAIResponse(question);
+        botMsg.innerHTML = `🤖 ${response}`;
+        chat.scrollTop = chat.scrollHeight;
+    }, 800);
+}
+
+// ============================================================
+// KEYBOARD SHORTCUTS
+// ============================================================
+document.addEventListener('keydown', (e) => {
+    if (e.ctrlKey && e.key === 'q') { e.preventDefault(); navigateTo('quran'); }
+    if (e.ctrlKey && e.key === 'p') { e.preventDefault(); navigateTo('prayer'); }
+    if (e.ctrlKey && e.key === 'h') { e.preventDefault(); navigateTo('hadith'); }
+    if (e.ctrlKey && e.key === 'a') { e.preventDefault(); navigateTo('ai-assistant'); }
+});
 
 // ============================================================
 // EXPOSE GLOBAL FUNCTIONS
@@ -1129,5 +1362,7 @@ window.toggleOffline = toggleOffline;
 window.backupData = backupData;
 window.startChallenge = startChallenge;
 window.saveNote = saveNote;
+window.askBot = askBot;
 
 console.log('🚀 DeenMax ready!');
+console.log('📖 Features: Quran, Prayer, Qibla, Tasbih, Zakat, Fasting, Hadith, Courses, AI Assistant, Videos, Adhkar, Kids, Health, Travel, and more!');
