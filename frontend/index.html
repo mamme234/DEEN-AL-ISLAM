@@ -1,259 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>🌟 DeenMax v3.0 · Complete Islamic Platform</title>
-    
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet" />
-    <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeenMax - Islamic Lifestyle App</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div id="root">
+        <!-- Beautiful loading screen -->
+        <div class="loading-screen" id="loadingScreen">
+            <div class="loading-content">
+                <!-- Islamic geometric pattern background -->
+                <div class="geometric-bg"></div>
+                
+                <!-- Main content -->
+                <div class="loading-box">
+                    <!-- Logo -->
+                    <div class="logo-container">
+                        <div class="logo-icon">
+                            <svg viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="45" fill="none" stroke="#2d6a4f" stroke-width="2"/>
+                                <path d="M50 15 L50 85 M15 50 L85 50" stroke="#2d6a4f" stroke-width="2"/>
+                                <circle cx="50" cy="50" r="15" fill="#2d6a4f"/>
+                                <path d="M35 40 L50 30 L65 40 L65 60 L50 70 L35 60 Z" fill="#52b788" opacity="0.3"/>
+                            </svg>
+                        </div>
+                        <h1 class="app-title">DeenMax</h1>
+                        <span class="app-version">v3.0</span>
+                    </div>
 
-    <!-- ============================================================
-    SIDEBAR NAVIGATION
-    ============================================================ -->
-    <nav class="sidebar" id="sidebar">
-        <div class="sidebar-brand">
-            <span class="logo">🌟 Deen<span>Max</span></span>
-            <small>v3.0</small>
-            <button class="lang-btn" onclick="toggleLanguage()">🌍 EN</button>
+                    <!-- Greeting -->
+                    <div class="greeting-section">
+                        <p class="salam">السلام عليكم</p>
+                        <h2 class="greeting-text">Assalamu Alaikum!</h2>
+                        <p class="subtext">May your day be filled with blessings and peace</p>
+                    </div>
+
+                    <!-- Animated Loading -->
+                    <div class="loading-wrapper">
+                        <div class="loading-spinner">
+                            <div class="spinner-ring"></div>
+                            <div class="spinner-ring"></div>
+                            <div class="spinner-ring"></div>
+                        </div>
+                        <div class="loading-bar">
+                            <div class="loading-progress" id="progressBar"></div>
+                        </div>
+                        <p class="loading-status">Loading your spiritual journey...</p>
+                    </div>
+
+                    <!-- Quick Stats Placeholder -->
+                    <div class="quick-stats">
+                        <div class="stat-item">
+                            <span class="stat-icon">🕌</span>
+                            <span class="stat-label">Prayer</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-icon">📖</span>
+                            <span class="stat-label">Quran</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-icon">🤲</span>
+                            <span class="stat-label">Du'as</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-icon">❤️</span>
+                            <span class="stat-label">Community</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="loading-footer">
+                    <p>Powered by faith ❤️</p>
+                </div>
+            </div>
         </div>
+    </div>
 
-        <ul class="sidebar-menu" id="mainMenu">
-            <li class="menu-section">📖 Worship</li>
-            <li class="active" data-page="dashboard"><i class="fas fa-home"></i> Dashboard</li>
-            <li data-page="quran"><i class="fas fa-book-quran"></i> Quran</li>
-            <li data-page="prayer"><i class="fas fa-clock"></i> Prayer</li>
-            <li data-page="qibla"><i class="fas fa-compass"></i> Qibla</li>
-            <li data-page="mosque"><i class="fas fa-mosque"></i> Mosques</li>
-            <li data-page="tasbih"><i class="fas fa-beads"></i> Tasbih</li>
-            <li data-page="calendar"><i class="fas fa-calendar-alt"></i> Calendar</li>
-            <li data-page="zakat"><i class="fas fa-coins"></i> Zakat</li>
-            <li data-page="fasting"><i class="fas fa-utensils"></i> Fasting</li>
-
-            <li class="menu-section">📚 Learning</li>
-            <li data-page="hadith"><i class="fas fa-scroll"></i> Hadith</li>
-            <li data-page="courses"><i class="fas fa-graduation-cap"></i> Courses</li>
-            <li data-page="hifz"><i class="fas fa-memory"></i> Hifz Tracker</li>
-            <li data-page="tajweed"><i class="fas fa-microphone-alt"></i> Tajweed</li>
-
-            <li class="menu-section">🤖 AI & Media</li>
-            <li data-page="ai-assistant"><i class="fas fa-robot"></i> AI Assistant</li>
-            <li data-page="videos"><i class="fab fa-youtube"></i> Videos</li>
-
-            <li class="menu-section">👥 Community</li>
-            <li data-page="groups"><i class="fas fa-users"></i> Groups</li>
-            <li data-page="charity"><i class="fas fa-hand-holding-heart"></i> Charity</li>
-
-            <li class="menu-section">🌟 Productivity</li>
-            <li data-page="adhkar"><i class="fas fa-pray"></i> Adhkar</li>
-            <li data-page="habits"><i class="fas fa-check-double"></i> Habits</li>
-
-            <li class="menu-section">👶 Kids</li>
-            <li data-page="kids"><i class="fas fa-child"></i> Kids</li>
-
-            <li class="menu-section">⚙️ Settings</li>
-            <li data-page="settings"><i class="fas fa-cog"></i> Settings</li>
-        </ul>
-
-        <div class="sidebar-footer">
-            <button onclick="toggleTheme()" title="Toggle Theme"><i class="fas fa-moon"></i></button>
-            <button onclick="toggleOffline()" title="Toggle Offline"><i class="fas fa-cloud-download-alt"></i></button>
-            <button onclick="backupData()" title="Cloud Backup"><i class="fas fa-cloud-upload-alt"></i></button>
-            <button onclick="logout()" title="Logout"><i class="fas fa-sign-out-alt"></i></button>
-        </div>
-    </nav>
-
-    <!-- ============================================================
-    MAIN CONTENT
-    ============================================================ -->
-    <main class="main-content">
-
-        <!-- TOP BAR -->
-        <header class="topbar">
-            <button id="menuToggle"><i class="fas fa-bars"></i></button>
-            <h2 id="pageTitle">📊 Dashboard</h2>
-            <div class="topbar-right">
-                <span id="greeting">Assalamu Alaikum! 👋</span>
-                <span id="hijriDate" class="hijri-badge">12 Dhul-Hijjah 1447</span>
-                <span id="onlineStatus" class="status-dot online"></span>
-                <span id="userBadge" class="user-badge">👤 Guest</span>
-            </div>
-        </header>
-
-        <!-- ============================================================
-        PAGE: DASHBOARD
-        ============================================================ -->
-        <section id="page-dashboard" class="page active">
-            
-            <!-- Welcome Banner -->
-            <div class="dashboard-banner">
-                <div class="banner-content">
-                    <div class="banner-greeting">
-                        <span class="greeting-icon">🌙</span>
-                        <h2>Assalamu Alaikum! <span id="userNameDisplay">Guest</span></h2>
-                    </div>
-                    <p class="banner-message" id="greetingMessage">May your day be filled with blessings and peace ✨</p>
-                    <div class="banner-stats">
-                        <span class="banner-stat">📅 <span id="todayDate">June 27, 2026</span></span>
-                        <span class="banner-stat">🕋 <span id="todayHijri">12 Dhul-Hijjah 1447</span></span>
-                    </div>
-                </div>
-                <div class="banner-decoration">
-                    <div class="moon-icon">🌙</div>
-                    <div class="stars">✦ ✦ ✦</div>
-                </div>
-            </div>
-
-            <!-- Stats -->
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-icon">📖</div>
-                    <div class="stat-info">
-                        <span class="stat-number" id="quranRead">0</span>
-                        <small class="stat-label">Verses Today</small>
-                    </div>
-                    <div class="stat-progress"><div class="progress-bar" style="width: 65%"></div></div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">🔥</div>
-                    <div class="stat-info">
-                        <span class="stat-number" id="prayerStreak">0</span>
-                        <small class="stat-label">Day Streak</small>
-                    </div>
-                    <div class="stat-progress"><div class="progress-bar" style="width: 80%"></div></div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">📚</div>
-                    <div class="stat-info">
-                        <span class="stat-number" id="hifzProgress">0%</span>
-                        <small class="stat-label">Hifz Progress</small>
-                    </div>
-                    <div class="stat-progress"><div class="progress-bar" id="hifzProgressBar" style="width: 0%"></div></div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">🏆</div>
-                    <div class="stat-info">
-                        <span class="stat-number" id="badgeCount">0</span>
-                        <small class="stat-label">Badges Earned</small>
-                    </div>
-                    <div class="stat-progress"><div class="progress-bar" style="width: 45%"></div></div>
-                </div>
-            </div>
-
-            <!-- Dashboard Grid -->
-            <div class="dashboard-grid">
-                <div class="card featured-card">
-                    <div class="card-header">
-                        <h3>📖 Today's Ayah</h3>
-                        <span class="card-badge">Daily</span>
-                    </div>
-                    <div class="ayah-card-content" id="dailyAyahContainer">
-                        <p class="ayah-arabic" id="dailyAyahArabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
-                        <p class="ayah-translation" id="dailyAyahTranslation">In the name of Allah, the Most Gracious, the Most Merciful</p>
-                    </div>
-                    <button class="btn-primary" onclick="navigateTo('quran')">Read More →</button>
-                </div>
-
-                <div class="card featured-card">
-                    <div class="card-header">
-                        <h3>📜 Today's Hadith</h3>
-                        <span class="card-badge">Daily</span>
-                    </div>
-                    <div class="hadith-card-content">
-                        <p class="hadith-text" id="dailyHadithText">The best of you are those who are best to their families.</p>
-                        <p class="hadith-reference" id="dailyHadithRef">— Tirmidhi</p>
-                    </div>
-                    <button class="btn-primary" onclick="getRandomHadith()">New Hadith →</button>
-                </div>
-
-                <div class="card featured-card">
-                    <div class="card-header">
-                        <h3>🎯 Daily Challenge</h3>
-                        <span class="card-badge">Goal</span>
-                    </div>
-                    <div class="challenge-content">
-                        <p id="dailyChallenge">Read 1 Juz today!</p>
-                        <div class="challenge-progress"><div class="challenge-bar" style="width: 0%"></div></div>
-                        <span class="challenge-status">0% Complete</span>
-                    </div>
-                    <button class="btn-primary" onclick="startChallenge()">Start Challenge →</button>
-                </div>
-
-                <div class="card featured-card">
-                    <div class="card-header">
-                        <h3>🤖 AI Assistant</h3>
-                        <span class="card-badge">New</span>
-                    </div>
-                    <p class="ai-preview">Ask any Islamic question and get authentic answers with sources 📚</p>
-                    <div class="quick-ai-questions">
-                        <button onclick="askAIQuestion('What does the Quran say about charity?')">Charity</button>
-                        <button onclick="askAIQuestion('Explain Surah Al-Fatihah')">Al-Fatihah</button>
-                        <button onclick="askAIQuestion('Best dua for protection?')">Dua</button>
-                    </div>
-                    <button class="btn-primary" onclick="navigateTo('ai-assistant')">Chat Now →</button>
-                </div>
-            </div>
-
-            <!-- Quick Actions -->
-            <div class="quick-actions-section">
-                <h4>⚡ Quick Actions</h4>
-                <div class="quick-actions">
-                    <button onclick="navigateTo('quran')" class="quick-btn"><i class="fas fa-book-quran"></i><span>Read Quran</span></button>
-                    <button onclick="navigateTo('prayer')" class="quick-btn"><i class="fas fa-clock"></i><span>Prayer Times</span></button>
-                    <button onclick="navigateTo('tasbih')" class="quick-btn"><i class="fas fa-beads"></i><span>Tasbih</span></button>
-                    <button onclick="navigateTo('ai-assistant')" class="quick-btn"><i class="fas fa-robot"></i><span>Ask AI</span></button>
-                    <button onclick="navigateTo('qibla')" class="quick-btn"><i class="fas fa-compass"></i><span>Qibla</span></button>
-                    <button onclick="navigateTo('adhkar')" class="quick-btn"><i class="fas fa-pray"></i><span>Adhkar</span></button>
-                </div>
-            </div>
-
-            <!-- Recent Activity -->
-            <div class="recent-activity">
-                <h4>📊 Recent Activity</h4>
-                <div class="activity-list" id="activityList">
-                    <div class="activity-item"><span class="activity-icon">📖</span><span class="activity-text">Read Surah Al-Fatihah</span><span class="activity-time">2 min ago</span></div>
-                    <div class="activity-item"><span class="activity-icon">🤲</span><span class="activity-text">Completed Morning Adhkar</span><span class="activity-time">15 min ago</span></div>
-                    <div class="activity-item"><span class="activity-icon">🕌</span><span class="activity-text">Prayed Dhuhr</span><span class="activity-time">1 hour ago</span></div>
-                    <div class="activity-item"><span class="activity-icon">📿</span><span class="activity-text">100 Tasbih completed</span><span class="activity-time">2 hours ago</span></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ============================================================
-        PLACEHOLDER PAGES (all other sections)
-        ============================================================ -->
-        <section id="page-quran" class="page"><div class="placeholder-page"><h2>📖 Quran</h2><p>Interactive Quran reading with tafsir, translation, and audio.</p></div></section>
-        <section id="page-prayer" class="page"><div class="placeholder-page"><h2>🕌 Prayer</h2><p>Prayer times, adhan notifications, and prayer tracker.</p></div></section>
-        <section id="page-qibla" class="page"><div class="placeholder-page"><h2>🧭 Qibla</h2><p>Compass direction to the Kaaba in Makkah.</p></div></section>
-        <section id="page-mosque" class="page"><div class="placeholder-page"><h2>🕌 Mosques</h2><p>Find nearby mosques with directions.</p></div></section>
-        <section id="page-tasbih" class="page"><div class="placeholder-page"><h2>📿 Tasbih</h2><p>Digital tasbih with dhikr phrases and counters.</p></div></section>
-        <section id="page-calendar" class="page"><div class="placeholder-page"><h2>📅 Calendar</h2><p>Islamic and Gregorian calendar with events.</p></div></section>
-        <section id="page-zakat" class="page"><div class="placeholder-page"><h2>💰 Zakat</h2><p>Zakat calculator based on wealth and assets.</p></div></section>
-        <section id="page-fasting" class="page"><div class="placeholder-page"><h2>🌙 Fasting</h2><p>Track fasting days and Ramadan progress.</p></div></section>
-        <section id="page-hadith" class="page"><div class="placeholder-page"><h2>📜 Hadith</h2><p>Authentic hadith from major collections.</p></div></section>
-        <section id="page-courses" class="page"><div class="placeholder-page"><h2>📚 Courses</h2><p>Islamic courses with progress tracking.</p></div></section>
-        <section id="page-hifz" class="page"><div class="placeholder-page"><h2>📝 Hifz Tracker</h2><p>Track your Quran memorization progress.</p></div></section>
-        <section id="page-tajweed" class="page"><div class="placeholder-page"><h2>🎤 Tajweed</h2><p>Learn tajweed rules with interactive lessons.</p></div></section>
-        <section id="page-ai-assistant" class="page"><div class="placeholder-page"><h2>🤖 AI Assistant</h2><p>Ask any Islamic question with authentic sources.</p></div></section>
-        <section id="page-videos" class="page"><div class="placeholder-page"><h2>📺 Videos</h2><p>Islamic videos: recitations, lectures, and kids content.</p></div></section>
-        <section id="page-groups" class="page"><div class="placeholder-page"><h2>👥 Groups</h2><p>Community groups and study circles.</p></div></section>
-        <section id="page-charity" class="page"><div class="placeholder-page"><h2>🤲 Charity</h2><p>Donate to verified Islamic charity campaigns.</p></div></section>
-        <section id="page-adhkar" class="page"><div class="placeholder-page"><h2>🌟 Adhkar</h2><p>Morning, evening, and sleep adhkar.</p></div></section>
-        <section id="page-habits" class="page"><div class="placeholder-page"><h2>✅ Habits</h2><p>Islamic habit tracker for daily goals.</p></div></section>
-        <section id="page-kids" class="page"><div class="placeholder-page"><h2>👶 Kids</h2><p>Islamic stories and activities for children.</p></div></section>
-        <section id="page-settings" class="page"><div class="placeholder-page"><h2>⚙️ Settings</h2><p>Language, account, backup, and app preferences.</p></div></section>
-
-    </main>
-
-    <!-- ============================================================
-    JAVASCRIPT — SEPARATE FILE
-    ============================================================ -->
-    <script src="script.js"></script>
+    <script>
+        // Simulate loading progress
+        let progress = 0;
+        const progressBar = document.getElementById('progressBar');
+        
+        function updateProgress() {
+            if (progress < 100) {
+                progress += Math.random() * 3;
+                if (progress > 100) progress = 100;
+                progressBar.style.width = progress + '%';
+                setTimeout(updateProgress, 200);
+            }
+        }
+        
+        // Start progress animation
+        updateProgress();
+        
+        // Check if backend is available
+        async function checkBackend() {
+            try {
+                const response = await fetch('/api/dashboard');
+                if (response.ok) {
+                    // Backend is ready, redirect or show app
+                    setTimeout(() => {
+                        window.location.href = '/app';
+                    }, 1000);
+                }
+            } catch (error) {
+                // Keep showing loading with retry
+                console.log('Waiting for backend...');
+                setTimeout(checkBackend, 3000);
+            }
+        }
+        
+        // Start checking for backend
+        setTimeout(checkBackend, 2000);
+    </script>
 </body>
-                                                                                </html>
+</html>
