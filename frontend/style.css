@@ -347,11 +347,103 @@ button {
 }
 
 /* ============================================================
-   DASHBOARD
+   DASHBOARD - BANNER
+   ============================================================ */
+.dashboard-banner {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.08), rgba(212, 175, 55, 0.02));
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 24px 30px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.dashboard-banner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.05), transparent);
+    border-radius: 50%;
+}
+
+.banner-content {
+    flex: 1;
+    z-index: 1;
+}
+
+.banner-greeting {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.banner-greeting .greeting-icon {
+    font-size: 2rem;
+}
+
+.banner-greeting h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.banner-greeting h2 span {
+    color: var(--secondary);
+}
+
+.banner-message {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 4px 0 8px;
+}
+
+.banner-stats {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.banner-stat {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    background: rgba(255, 255, 255, 0.04);
+    padding: 4px 14px;
+    border-radius: 20px;
+}
+
+.banner-decoration {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    z-index: 1;
+}
+
+.moon-icon {
+    font-size: 4rem;
+    opacity: 0.15;
+}
+
+.stars {
+    color: var(--secondary);
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    opacity: 0.3;
+}
+
+/* ============================================================
+   DASHBOARD - STATS
    ============================================================ */
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 14px;
     margin-bottom: 20px;
 }
@@ -363,39 +455,69 @@ button {
     padding: 16px 18px;
     border-radius: var(--radius);
     border: 1px solid var(--border-color);
-    text-align: center;
     transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 14px;
 }
 
 .stat-card:hover {
-    transform: translateY(-2px);
+    transform: translateY(-3px);
     box-shadow: var(--shadow-light);
 }
 
-.stat-card i {
+.stat-icon {
     font-size: 1.8rem;
-    color: var(--secondary);
-    display: block;
-    margin-bottom: 4px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(212, 175, 55, 0.08);
+    border-radius: 12px;
+    flex-shrink: 0;
 }
 
-.stat-card span {
-    font-size: 1.6rem;
+.stat-info {
+    flex: 1;
+}
+
+.stat-number {
+    font-size: 1.5rem;
     font-weight: 700;
-    display: block;
     color: var(--text);
+    display: block;
 }
 
-.stat-card small {
+.stat-label {
     color: var(--text-muted);
     font-size: 0.7rem;
-    display: block;
-    margin-top: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
+.stat-progress {
+    width: 100%;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    margin-top: 4px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--secondary), #f0c040);
+    border-radius: 10px;
+    transition: width 1s ease;
+}
+
+/* ============================================================
+   DASHBOARD - GRID CARDS
+   ============================================================ */
 .dashboard-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 16px;
     margin-bottom: 16px;
 }
@@ -412,19 +534,119 @@ button {
 
 .card:hover {
     box-shadow: var(--shadow-light);
+    transform: translateY(-2px);
 }
 
-.card h3 {
+.featured-card {
+    position: relative;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.card-header h3 {
     color: var(--secondary);
-    margin-bottom: 8px;
     font-size: 1rem;
     font-weight: 600;
 }
 
-.card p {
+.card-badge {
+    background: rgba(212, 175, 55, 0.12);
+    color: var(--secondary);
+    font-size: 0.6rem;
+    padding: 2px 12px;
+    border-radius: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.ayah-card-content .ayah-arabic {
+    font-size: 1.3rem;
+    font-family: 'Amiri', serif;
+    direction: rtl;
+    text-align: right;
+    color: var(--text);
+    line-height: 1.8;
+}
+
+.ayah-card-content .ayah-translation {
+    font-size: 0.9rem;
     color: var(--text-muted);
+    margin-top: 4px;
+}
+
+.hadith-card-content .hadith-text {
+    font-size: 0.95rem;
+    font-style: italic;
+    color: var(--text);
     line-height: 1.6;
-    font-size: 0.92rem;
+}
+
+.hadith-card-content .hadith-reference {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+.challenge-content p {
+    color: var(--text);
+    font-size: 0.95rem;
+}
+
+.challenge-progress {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    margin: 8px 0;
+    overflow: hidden;
+}
+
+.challenge-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--secondary), #f0c040);
+    border-radius: 10px;
+    transition: width 1s ease;
+}
+
+.challenge-status {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.ai-preview {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin: 4px 0 10px;
+}
+
+.quick-ai-questions {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin: 8px 0;
+}
+
+.quick-ai-questions button {
+    background: rgba(212, 175, 55, 0.06);
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.quick-ai-questions button:hover {
+    background: var(--secondary);
+    color: var(--bg);
+    border-color: var(--secondary);
 }
 
 .btn-primary {
@@ -445,48 +667,103 @@ button {
     box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
 }
 
-.btn-secondary {
-    background: transparent;
-    color: var(--text);
-    border: 1px solid var(--border-color);
-    padding: 8px 22px;
-    border-radius: 30px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: var(--transition);
+/* ============================================================
+   DASHBOARD - QUICK ACTIONS
+   ============================================================ */
+.quick-actions-section {
+    margin: 20px 0 16px;
 }
 
-.btn-secondary:hover {
-    background: var(--secondary);
-    color: var(--bg);
-    border-color: var(--secondary);
+.quick-actions-section h4 {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    font-weight: 500;
 }
 
 .quick-actions {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
-    margin-top: 4px;
 }
 
-.quick-actions button {
+.quick-btn {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
     color: var(--text);
-    padding: 10px 20px;
+    padding: 10px 18px;
     border-radius: 30px;
     cursor: pointer;
     transition: var(--transition);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
-.quick-actions button:hover {
+.quick-btn:hover {
     background: var(--secondary);
     color: var(--bg);
     border-color: var(--secondary);
+    transform: translateY(-2px);
+}
+
+.quick-btn i {
+    font-size: 1rem;
+}
+
+/* ============================================================
+   DASHBOARD - RECENT ACTIVITY
+   ============================================================ */
+.recent-activity {
+    background: var(--bg-card);
+    padding: 16px 20px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-color);
+    margin-top: 16px;
+}
+
+.recent-activity h4 {
+    color: var(--secondary);
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+}
+
+.activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.activity-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    background: rgba(255, 255, 255, 0.02);
+    transition: var(--transition);
+}
+
+.activity-item:hover {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.activity-icon {
+    font-size: 1.1rem;
+    width: 30px;
+    text-align: center;
+}
+
+.activity-text {
+    flex: 1;
+    font-size: 0.85rem;
+    color: var(--text);
+}
+
+.activity-time {
+    font-size: 0.7rem;
+    color: var(--text-muted);
 }
 
 /* ============================================================
@@ -582,11 +859,6 @@ button {
     color: var(--bg);
 }
 
-.quran-actions button.active {
-    background: var(--secondary);
-    color: var(--bg);
-}
-
 .ayah-display {
     background: var(--bg-card);
     padding: 28px 30px;
@@ -594,17 +866,6 @@ button {
     text-align: center;
     border: 1px solid var(--border-color);
     position: relative;
-}
-
-.ayah-display .ayah-number {
-    position: absolute;
-    top: 12px;
-    right: 16px;
-    color: var(--secondary);
-    font-size: 0.75rem;
-    background: rgba(212, 175, 55, 0.08);
-    padding: 2px 12px;
-    border-radius: 12px;
 }
 
 .arabic {
@@ -666,6 +927,30 @@ button {
 .audio-player audio {
     width: 100%;
     border-radius: 8px;
+}
+
+.audio-controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+
+.audio-controls button {
+    background: rgba(212, 175, 55, 0.06);
+    border: 1px solid var(--border-color);
+    color: var(--text);
+    padding: 4px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    transition: var(--transition);
+}
+
+.audio-controls button:hover {
+    background: var(--secondary);
+    color: var(--bg);
+    border-color: var(--secondary);
 }
 
 .quran-notes {
@@ -803,13 +1088,6 @@ button {
     font-size: 1.2rem;
     font-weight: 600;
     color: var(--text);
-}
-
-.prayer-card small {
-    display: block;
-    color: var(--text-muted);
-    font-size: 0.65rem;
-    margin-top: 2px;
 }
 
 .prayer-tracker {
@@ -1038,6 +1316,23 @@ button {
     font-size: 1.1rem;
     margin-top: 6px;
     font-weight: 600;
+}
+
+.tasbih-history {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border-color);
+}
+
+.tasbih-history h4 {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.tasbih-history span {
+    color: var(--secondary);
+    font-size: 1.2rem;
+    font-weight: 700;
 }
 
 /* ============================================================
@@ -1706,7 +2001,7 @@ button {
 }
 
 /* ============================================================
-   KIDS
+   KIDS, GROUPS, CHARITY
    ============================================================ */
 .story-grid {
     display: grid;
@@ -1753,6 +2048,72 @@ button {
 
 .story-card button:hover {
     transform: scale(1.05);
+}
+
+.groups-grid,
+.charity-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px;
+}
+
+.group-card,
+.charity-card {
+    background: var(--bg-card);
+    padding: 16px 18px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.group-card:hover,
+.charity-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-light);
+}
+
+.group-card h4,
+.charity-card h4 {
+    color: var(--secondary);
+}
+
+.group-card p,
+.charity-card p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin: 4px 0;
+}
+
+.group-card button,
+.charity-card button {
+    margin-top: 8px;
+    padding: 4px 20px;
+    border-radius: 20px;
+    border: none;
+    background: var(--secondary);
+    color: var(--bg);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.charity-progress {
+    margin: 8px 0;
+}
+
+.charity-progress progress {
+    width: 100%;
+    height: 6px;
+    border-radius: 10px;
+}
+
+.charity-progress progress::-webkit-progress-bar {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+}
+
+.charity-progress progress::-webkit-progress-value {
+    background: var(--secondary);
+    border-radius: 10px;
 }
 
 /* ============================================================
@@ -1890,6 +2251,104 @@ button {
 }
 
 /* ============================================================
+   TAJWEED
+   ============================================================ */
+.tajweed-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
+}
+
+.tajweed-card {
+    background: var(--bg-card);
+    padding: 16px 18px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.tajweed-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-light);
+}
+
+.tajweed-card h4 {
+    color: var(--secondary);
+    font-size: 1rem;
+}
+
+.tajweed-card p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin: 4px 0;
+}
+
+.tajweed-card .btn-small {
+    padding: 4px 16px;
+    border-radius: 20px;
+    border: none;
+    background: var(--secondary);
+    color: var(--bg);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* ============================================================
+   HABITS
+   ============================================================ */
+.habits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 14px;
+}
+
+.habit-card {
+    background: var(--bg-card);
+    padding: 16px 18px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+    text-align: center;
+}
+
+.habit-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-light);
+}
+
+.habit-card h4 {
+    color: var(--secondary);
+    font-size: 0.95rem;
+}
+
+.habit-progress progress {
+    width: 100%;
+    height: 6px;
+    border-radius: 10px;
+    margin: 8px 0;
+}
+
+.habit-progress progress::-webkit-progress-bar {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+}
+
+.habit-progress progress::-webkit-progress-value {
+    background: var(--secondary);
+    border-radius: 10px;
+}
+
+.habit-card button {
+    padding: 4px 20px;
+    border-radius: 20px;
+    border: none;
+    background: var(--secondary);
+    color: var(--bg);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* ============================================================
    RESPONSIVE DESIGN
    ============================================================ */
 
@@ -1904,6 +2363,13 @@ button {
     .main-content {
         margin-left: 240px;
         padding: 14px 20px;
+    }
+    .dashboard-banner {
+        flex-direction: column;
+        text-align: center;
+    }
+    .banner-decoration {
+        display: none;
     }
 }
 
@@ -1988,6 +2454,14 @@ button {
     .quick-actions {
         justify-content: center;
     }
+    
+    .dashboard-banner {
+        padding: 16px 18px;
+    }
+    
+    .banner-greeting h2 {
+        font-size: 1.2rem;
+    }
 }
 
 /* Small Mobile */
@@ -1997,7 +2471,11 @@ button {
         gap: 8px;
     }
     
-    .stat-card span {
+    .stat-card {
+        padding: 12px;
+    }
+    
+    .stat-number {
         font-size: 1.2rem;
     }
     
@@ -2042,6 +2520,27 @@ button {
     
     .hifz-stats {
         grid-template-columns: 1fr 1fr;
+    }
+    
+    .banner-greeting .greeting-icon {
+        font-size: 1.5rem;
+    }
+    
+    .banner-greeting h2 {
+        font-size: 1rem;
+    }
+    
+    .banner-message {
+        font-size: 0.85rem;
+    }
+    
+    .banner-stats {
+        gap: 8px;
+    }
+    
+    .banner-stat {
+        font-size: 0.7rem;
+        padding: 2px 10px;
     }
 }
 
